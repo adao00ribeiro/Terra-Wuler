@@ -51,5 +51,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "Terra Wuler.sln"
+    "dotnet.defaultSolution": "Terra-Wuler.sln"
 }
