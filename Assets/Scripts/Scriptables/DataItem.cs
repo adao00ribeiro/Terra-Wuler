@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,6 +13,7 @@ namespace TerraWuler
         [SerializeField] public string Name;
         [SerializeField] public string Description = "NONE";
         [SerializeField] public float Durability;
+        [SerializeField] public bool Stackble;
         [SerializeField] public GameObject Prefab;
 
 
