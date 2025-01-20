@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
@@ -7,21 +6,6 @@ namespace TerraWuler
 {
     public class TimerManager : MonoBehaviour
     {
-        private static TimerManager _instance;
-        public static TimerManager Instance
-        {
-            get
-            {
-                if (_instance == null)
-                {
-                    var obj = new GameObject("TimerManager");
-                    _instance = obj.AddComponent<TimerManager>();
-                    DontDestroyOnLoad(obj);
-                }
-                return _instance;
-            }
-        }
-
         [System.Serializable]
         public class TimedEvent
         {
@@ -31,18 +15,9 @@ namespace TerraWuler
 
         private List<TimedEvent> timedEvents;
 
-
         private void Awake()
         {
-            if (_instance == null)
-            {
-                _instance = this;
-                timedEvents = new List<TimedEvent>();
-            }
-            else if (_instance != this)
-            {
-                Destroy(gameObject);
-            }
+            timedEvents = new List<TimedEvent>();
         }
         public void AddEvent(float timeInSeconds, Action method)
         {
@@ -56,7 +31,8 @@ namespace TerraWuler
         private void Update()
         {
             float currentTime = Time.time;
-
+            if (timedEvents.Count == 0)
+            return;
             for (int i = timedEvents.Count - 1; i >= 0; i--)
             {
                 if (currentTime >= timedEvents[i].TriggerTime)
