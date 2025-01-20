@@ -1,3 +1,4 @@
+using TerraWuler;
 using UnityEngine;
 
 public class GameController : MonoBehaviour
@@ -5,7 +6,7 @@ public class GameController : MonoBehaviour
 
     #region PRIVATE
 
-
+    [SerializeField] private TimerManager timerManager;
 
     #endregion
 
@@ -47,4 +48,15 @@ public class GameController : MonoBehaviour
             return _instance;
         }
     }
+       public TimerManager TimerManager
+        {
+            get
+            {
+                if (timerManager == null)
+                {
+                    timerManager = FindAnyObjectByType<TimerManager>();
+                }
+                return timerManager;
+            }
+        }
 }
