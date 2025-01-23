@@ -1,13 +1,12 @@
 using TerraWuler;
 using UnityEngine;
-
 public class GameController : MonoBehaviour
 {
 
     #region PRIVATE
 
     [SerializeField] private TimerManager timerManager;
-    [SerializeField] private DataManager dataManager;
+    //[SerializeField] private DataManager dataManager;
 
     #endregion
 
@@ -58,7 +57,7 @@ public class GameController : MonoBehaviour
                 return timerManager;
             }
         }
-        public DataManager DataManager
+        /*public DataManager DataManager
         {
             get
             {
@@ -68,5 +67,5 @@ public class GameController : MonoBehaviour
                 }
                 return dataManager;
             }
-        }
+        }*/
 }
