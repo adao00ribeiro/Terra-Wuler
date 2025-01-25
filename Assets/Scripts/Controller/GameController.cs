@@ -1,15 +1,11 @@
+using System;
 using TerraWuler;
 using UnityEngine;
 public class GameController : MonoBehaviour
 {
-
-    #region PRIVATE
-
-    [SerializeField] private TimerManager timerManager;
-    //[SerializeField] private DataManager dataManager;
-
-    #endregion
-
+    [Header("Prefab Managers")]
+    [SerializeField] private GameObject[] ObjectsManager;
+ 
     void Awake()
     {
         if (_instance != null && _instance != this)
@@ -20,22 +16,30 @@ public class GameController : MonoBehaviour
         {
             _instance = this;
         }
-        // ObjectsManager = Resources.LoadAll<GameObject>("Manager");
-        // InitManagers();
+        ObjectsManager = Resources.LoadAll<GameObject>("Prefabs/Managers");
+        InitManagers();
         DontDestroyOnLoad(this);
     }
-    // Start is called before the first frame update
-    void Start()
+    public void InitManagers()
     {
-
+        foreach (var item in ObjectsManager)
+        {
+            Instantiate(item, transform);
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    public T GetComponentManager<T>() where T : class
     {
-
+       
+        foreach (var item in ObjectsManager)
+        {
+            if (item.TryGetComponent<T>(out var component))
+            {
+                return component;
+            }
+        }
+        return default;
     }
-
     private static GameController _instance;
 
     public static GameController Instance
@@ -46,26 +50,5 @@ public class GameController : MonoBehaviour
             return _instance;
         }
     }
-       public TimerManager TimerManager
-        {
-            get
-            {
-                if (timerManager == null)
-                {
-                    timerManager = FindAnyObjectByType<TimerManager>();
-                }
-                return timerManager;
-            }
-        }
-        /*public DataManager DataManager
-        {
-            get
-            {
-                if (dataManager == null)
-                {
-                    dataManager = FindAnyObjectByType<DataManager>();
-                }
-                return dataManager;
-            }
-        }*/
+
 }

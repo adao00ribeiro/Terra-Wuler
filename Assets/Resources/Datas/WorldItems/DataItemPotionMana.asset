@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35813f2ba91b00843b551a954e886ea5, type: 3}
+  m_Name: DataItemPotionMana
+  m_EditorClassIdentifier: 
+  GuidId: 299451b9-2aef-4b89-bf75-459f6babf2a3
+  Name: "Po\xE7\xE3o Mana"
+  Description: "Po\xE7\xE3o de Mana Top"
+  Durability: 0
+  Prefab: {fileID: 7166703534151594207, guid: a46ce9d3d9734b34bb61c843df8a6ebc, type: 3}
