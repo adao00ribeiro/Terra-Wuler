@@ -4,7 +4,11 @@ using UnityEngine;
 
 public class Warrior : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public int strength;
+    public int defense;
+    public int stamina;   
+    public int maxStamina; 
+
     void Start()
     {
         
