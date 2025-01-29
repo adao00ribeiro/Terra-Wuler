@@ -1,11 +1,12 @@
 using System;
+using System.Collections.Generic;
 using TerraWuler;
 using UnityEngine;
 public class GameController : MonoBehaviour
 {
     [Header("Prefab Managers")]
     [SerializeField] private GameObject[] ObjectsManager;
- 
+     private List<GameObject> Managers = new List<GameObject>();
     void Awake()
     {
         if (_instance != null && _instance != this)
@@ -24,16 +25,16 @@ public class GameController : MonoBehaviour
     {
         foreach (var item in ObjectsManager)
         {
-            Instantiate(item, transform);
+         Managers.Add(Instantiate(item, transform));
         }
     }
 
     public T GetComponentManager<T>() where T : class
     {
        
-        foreach (var item in ObjectsManager)
+        foreach (var item in Managers)
         {
-            if (item.TryGetComponent<T>(out var component))
+            if (item.TryGetComponent<T>(out T component))
             {
                 return component;
             }

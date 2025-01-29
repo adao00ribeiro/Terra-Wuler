@@ -9,12 +9,17 @@ public class InputManager : MonoBehaviour
 {
     private InputControls _inputs;
 
+    public Vector2 delta;
+    public Vector2 move ; 
     void Awake()
     {
         _inputs = new InputControls();
 
     }
-
+    public void Update(){
+        delta = GetLook();
+        move = GetMove();
+    }
     private void OnEnable()
     {
         _inputs.Enable();
