@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -13,7 +14,7 @@ public class PlayerController : MonoBehaviour
       inputManager = GameController.Instance.GetComponentManager<InputManager>();
       var rpgplayer =   Instantiate(character);
 
-      SetControl(character);
+      SetControl(rpgplayer);
     }
     void Update(){
 
@@ -21,4 +22,8 @@ public class PlayerController : MonoBehaviour
     public void SetControl(IControl control){
         this.control = control;
     }
+    public Character GetCharacter(){
+      return control.GetGameObject().GetComponent<Character>();
+    }
+   
 }

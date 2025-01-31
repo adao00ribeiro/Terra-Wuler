@@ -6,7 +6,7 @@ public class GameController : MonoBehaviour
 {
     [Header("Prefab Managers")]
     [SerializeField] private GameObject[] ObjectsManager;
-     private List<GameObject> Managers = new List<GameObject>();
+    private List<GameObject> Managers = new List<GameObject>();
     void Awake()
     {
         if (_instance != null && _instance != this)
@@ -25,13 +25,13 @@ public class GameController : MonoBehaviour
     {
         foreach (var item in ObjectsManager)
         {
-         Managers.Add(Instantiate(item, transform));
+            Managers.Add(Instantiate(item, transform));
         }
     }
 
     public T GetComponentManager<T>() where T : class
     {
-       
+
         foreach (var item in Managers)
         {
             if (item.TryGetComponent<T>(out T component))
@@ -42,7 +42,7 @@ public class GameController : MonoBehaviour
         return default;
     }
     private static GameController _instance;
-
+    private PlayerController playerController;
     public static GameController Instance
     {
         get
@@ -52,4 +52,15 @@ public class GameController : MonoBehaviour
         }
     }
 
+    public PlayerController PlayerController
+    {
+        get
+        {
+            if (playerController == null)
+            {
+                playerController = GameObject.FindAnyObjectByType<PlayerController>();
+            }
+            return playerController;
+        }
+    }
 }

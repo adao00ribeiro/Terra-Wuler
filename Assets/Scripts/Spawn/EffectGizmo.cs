@@ -25,6 +25,8 @@ public class EffectGizmo : MonoBehaviour
             case GizmoType.Cube:
                 pivotOffset.y = -size.y / 2;
                 Gizmos.DrawWireCube(transform.position - pivotOffset, size);
+               
+                    Gizmos.DrawCube(transform.position , size);
                 break;
 
             case GizmoType.Sphere:
@@ -32,7 +34,7 @@ public class EffectGizmo : MonoBehaviour
                 break;
 
             default:
-                Debug.LogWarning($"GizmoType '{gizmoType}' não é suportado.");
+                Debug.LogWarning($"GizmoType '{gizmoType}' nï¿½o ï¿½ suportado.");
                 break;
         }
     }

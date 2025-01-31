@@ -9,6 +9,17 @@ public class WorldItem : MonoBehaviour, IInteract
     {
 
     }
+   private void OnMouseDown()
+    {
+        Character character =   GameController.Instance.PlayerController.GetCharacter();
+        float distance = Vector3.Distance(character.gameObject.transform.position, this.transform.position);
+        print(distance);
+
+        if (character == null || distance > 1 ){
+            return;
+        }
+       OnInteract(character);
+    }
     // Update is called once per frame
     void Update()
     {
@@ -24,9 +35,9 @@ public class WorldItem : MonoBehaviour, IInteract
         throw new System.NotImplementedException();
     }
 
-    public void OnInteract()
+    public void OnInteract(Character character)
     {
-        throw new System.NotImplementedException();
+        print("opa");
     }
 
     public void StartFocus()

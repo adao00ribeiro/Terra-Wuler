@@ -8,6 +8,11 @@ public class Character : MonoBehaviour , IControl
     [SerializeField]private Animator animator;
     private InputManager inputManager;
 
+    public GameObject GetGameObject()
+    {
+      return this.gameObject;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
