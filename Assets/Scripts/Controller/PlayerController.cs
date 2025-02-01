@@ -6,24 +6,42 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-  [SerializeField]  private Character character;
+  [SerializeField] private RpgPlayer PrefabRpgPlayer;
+  private InputManager inputManager;
 
-    private InputManager inputManager;
-    private IControl  control;
-    void Start(){
-      inputManager = GameController.Instance.GetComponentManager<InputManager>();
-      var rpgplayer =   Instantiate(character);
 
-      SetControl(rpgplayer);
+  //controles 
+  private IControl control;
+  private Moviment moviment;
+  void Start()
+  {
+    inputManager = GameController.Instance.GetComponentManager<InputManager>();
+    var rpgplayer = Instantiate(PrefabRpgPlayer);
+    var datamanager = GameController.Instance.GetComponentManager<DataManager>();
+    rpgplayer.InstantiateCharacter(datamanager.GetDataCharacterByName("Arcanjo")?.PrefabCharacter);
+    SetControl(rpgplayer);
+  }
+  void Update()
+  {
+    float moveHorizontal = inputManager.GetMove().x;
+    float moveVertical = inputManager.GetMove().y;
+    if (moviment != null)
+    {
+      moviment.MovementInput(moveHorizontal, moveVertical);
+      if (inputManager.GetJump())
+      {
+        moviment.Jump();
+      }
     }
-    void Update(){
+  }
+  public void SetControl(IControl control)
+  {
+    this.control = control;
+    this.moviment = control.GetGameObject().GetComponent<Moviment>();
+  }
+  public Character GetCharacter()
+  {
+    return control.GetGameObject().GetComponent<Character>();
+  }
 
-    }
-    public void SetControl(IControl control){
-        this.control = control;
-    }
-    public Character GetCharacter(){
-      return control.GetGameObject().GetComponent<Character>();
-    }
-   
 }

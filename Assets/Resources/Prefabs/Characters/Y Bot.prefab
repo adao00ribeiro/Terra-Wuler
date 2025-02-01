@@ -76,5 +76,31 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: bf92fb44b7e10e84bbc8622288d77964,
+        type: 3}
+      insertIndex: 1
+      addedObject: {fileID: 51308673232091063}
   m_SourcePrefab: {fileID: 100100000, guid: bf92fb44b7e10e84bbc8622288d77964, type: 3}
+--- !u!1 &5453173365907860241 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: bf92fb44b7e10e84bbc8622288d77964,
+    type: 3}
+  m_PrefabInstance: {fileID: 5146762911204644416}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &51308673232091063
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5453173365907860241}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 780ea47947a5777438289d98d72edb8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  strength: 0
+  defense: 0
+  stamina: 0
+  maxStamina: 0

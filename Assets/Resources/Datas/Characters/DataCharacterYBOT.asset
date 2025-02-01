@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17ae1277228e8974186674528746bcec, type: 3}
   m_Name: DataCharacterYBOT
   m_EditorClassIdentifier: 
-  _name: YBOT
+  _name: Warrior
   _avatar: {fileID: 21300000, guid: c6ff8ad391608ce4888a1118ab0fd208, type: 3}
-  _prefabCharacter: {fileID: 919132149155446097, guid: bf92fb44b7e10e84bbc8622288d77964,
+  _prefabCharacter: {fileID: 5453173365907860241, guid: 5008c38ecadac1b44858a21a40c30680,
     type: 3}

@@ -44,7 +44,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ae380a43bd487849ad9864eae164973, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  character: {fileID: 5476087424992311440, guid: a2e9ffd4f7acee24f9a1bc413d2909d5,
-    type: 3}
-  springArms: {fileID: 634983853295310964, guid: b2bd42b7552bdbf4a9988a187681ce2a,
+  PrefabRpgPlayer: {fileID: 2531834603168526097, guid: a2e9ffd4f7acee24f9a1bc413d2909d5,
     type: 3}

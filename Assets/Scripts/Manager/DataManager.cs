@@ -5,7 +5,7 @@ using UnityEngine;
 public class DataManager : MonoBehaviour
 {
     [SerializeField] private DataAudio[] dataAudios;
-    // [SerializeField] private DataCharacter[] dataCharacter;
+    [SerializeField] private DataCharacter[] dataCharacters;
     [SerializeField] private DataDecals[] dataDecals;
     [SerializeField] private DataEnemy[] dataEnemy;
     [SerializeField] private DataItem[] dataItems;
@@ -13,19 +13,31 @@ public class DataManager : MonoBehaviour
     void Start()
     {
   
-            dataItems = Resources.LoadAll<DataItem>("Datas/DataItems");
-            //ListChareacter = Resources.LoadAll<DataCharacter>("Datas/DataCharacters");
+            dataItems = Resources.LoadAll<DataItem>("Datas/WorldItems");
+            dataCharacters = Resources.LoadAll<DataCharacter>("Datas/Characters");
             dataAudios = Resources.LoadAll<DataAudio>("Datas/DataAudios");
            // ListParticles = Resources.LoadAll<DataParticles>("Datas/DataParticles");
             dataDecals = Resources.LoadAll<DataDecals>("Datas/DataDecals");
     }
 
-      internal DataItem GetDataItemById(string guidId)
+    public DataItem GetDataItemById(string guidId)
     {
         DataItem temp = null;
         foreach (DataItem item in dataItems)
         {
             if (item.GuidId == guidId)
+            {
+                temp = item;
+            }
+        }
+        return temp;
+    }
+    public DataCharacter GetDataCharacterByName(string name)
+    {
+        DataCharacter temp = null;
+        foreach (DataCharacter item in dataCharacters)
+        {
+           if (item.Name.Equals(name, StringComparison.OrdinalIgnoreCase))
             {
                 temp = item;
             }

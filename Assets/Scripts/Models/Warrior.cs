@@ -1,8 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Warrior : MonoBehaviour
+public class Warrior : Character
 {
     public int strength;
     public int defense;
