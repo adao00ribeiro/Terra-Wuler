@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 1918842713673220029}
   - component: {fileID: 3694409412620500364}
   - component: {fileID: 5006445796608027660}
+  - component: {fileID: 6183289785867883973}
   m_Layer: 0
   m_Name: RpgPlayer
   m_TagString: Untagged
@@ -128,6 +129,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2aa93867a9a6744395a150aac28ed75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxSlot: 6
+  teste: 0
+--- !u!114 &6183289785867883973
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7220061995753860935}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 817d0f38ec28e584d84e62ded7770ff8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionObject: {fileID: 0}
+  GroundedRadius: 4.04
+  GroundedOffset: 0
+  GroundLayers:
+    serializedVersion: 2
+    m_Bits: 1
+  spherePosition: {x: 0, y: 0, z: 0}
 --- !u!1001 &6258882278103243586
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -285,6 +307,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SpringArms
+      objectReference: {fileID: 0}
+    - target: {fileID: 8185531721681192357, guid: b2bd42b7552bdbf4a9988a187681ce2a,
+        type: 3}
+      propertyPath: m_BackGroundColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8185531721681192357, guid: b2bd42b7552bdbf4a9988a187681ce2a,
+        type: 3}
+      propertyPath: m_BackGroundColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8185531721681192357, guid: b2bd42b7552bdbf4a9988a187681ce2a,
+        type: 3}
+      propertyPath: m_BackGroundColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8185531721681192357, guid: b2bd42b7552bdbf4a9988a187681ce2a,
+        type: 3}
+      propertyPath: m_BackGroundColor.r
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
