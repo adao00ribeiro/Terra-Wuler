@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using TerraWuler;
 
 public class PlayerController : MonoBehaviour
 {
@@ -18,12 +19,12 @@ public class PlayerController : MonoBehaviour
     inputManager = GameController.Instance.GetComponentManager<InputManager>();
     var rpgplayer = Instantiate(PrefabRpgPlayer);
     var datamanager = GameController.Instance.GetComponentManager<DataManager>();
-    rpgplayer.InstantiateCharacter(datamanager.GetDataCharacterByName("Arcanjo")?.PrefabCharacter);
+    rpgplayer.InstantiateCharacter(datamanager.GetDataCharacterByName("Warrior")?.PrefabCharacter);
     SetControl(rpgplayer);
   }
   void Update()
   {
-    float moveHorizontal = inputManager.GetMove().x;
+    /*float moveHorizontal = inputManager.GetMove().x;
     float moveVertical = inputManager.GetMove().y;
     if (moviment != null)
     {
@@ -32,7 +33,7 @@ public class PlayerController : MonoBehaviour
       {
         moviment.Jump();
       }
-    }
+    }*/
   }
   public void SetControl(IControl control)
   {
