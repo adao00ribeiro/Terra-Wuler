@@ -30,33 +30,23 @@ namespace TerraWuler
 
             rb = GetComponent<Rigidbody>();
             freeLookVCam = GetComponentInChildren<CinemachineFreeLook>();
-            inputManager = GameController.Instance.GetComponentManager<InputManager>();
-
             animator = GetComponentInChildren<Animator>();
-
             mainCam = Camera.main.transform;
-
 
             freeLookVCam.Follow = transform;
             freeLookVCam.LookAt = transform;
 
 
             freeLookVCam.OnTargetObjectWarped(transform, transform.position - freeLookVCam.transform.position - Vector3.forward);
-            
+
         }
 
-        private void FixedUpdate()
-        {
-            HandleMovement();
-        }
 
-        public void HandleMovement()
+        public void HandleMovement(float x, float y)
         {
 
-            Vector2 moveInput = inputManager.move;
-            var movementDirection = new Vector3(moveInput.x, 0f, moveInput.y).normalized;
+            var movementDirection = new Vector3(x, 0f, y).normalized;
 
-            
             var adjustedDirection = Quaternion.AngleAxis(mainCam.eulerAngles.y, Vector3.up) * movementDirection;
 
             if (adjustedDirection.magnitude > ZeroF)
@@ -69,7 +59,7 @@ namespace TerraWuler
             {
                 SmoothSpeed(ZeroF);
             }
-            animator.SetBool("IsRun", inputManager.GetMove().x != 0 || inputManager.GetMove().y != 0);
+
         }
 
 
@@ -85,9 +75,7 @@ namespace TerraWuler
         public void HandlesRotation(Vector3 adjustedDirection)
         {
             var targetRotation = Quaternion.LookRotation(adjustedDirection);
-            transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
-
-            transform.LookAt(transform.position + adjustedDirection);
+            transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
         }
 
 

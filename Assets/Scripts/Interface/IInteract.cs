@@ -4,7 +4,7 @@ using UnityEngine;
 
 public interface IInteract
 {
-    void OnInteract(Character character);
+    void OnInteract(Inventory inventory);
     void StartFocus();
     void EndFocus();
     string GetTitle();

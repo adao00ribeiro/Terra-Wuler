@@ -9,15 +9,15 @@ public class DataManager : MonoBehaviour
     [SerializeField] private DataDecals[] dataDecals;
     [SerializeField] private DataEnemy[] dataEnemy;
     [SerializeField] private DataItem[] dataItems;
-  
+
     void Start()
     {
-  
-            dataItems = Resources.LoadAll<DataItem>("Datas/WorldItems");
-            dataCharacters = Resources.LoadAll<DataCharacter>("Datas/Characters");
-            dataAudios = Resources.LoadAll<DataAudio>("Datas/DataAudios");
-           // ListParticles = Resources.LoadAll<DataParticles>("Datas/DataParticles");
-            dataDecals = Resources.LoadAll<DataDecals>("Datas/DataDecals");
+
+        dataItems = Resources.LoadAll<DataItem>("Datas/WorldItems");
+        dataCharacters = Resources.LoadAll<DataCharacter>("Datas/Characters");
+        dataAudios = Resources.LoadAll<DataAudio>("Datas/DataAudios");
+        // ListParticles = Resources.LoadAll<DataParticles>("Datas/DataParticles");
+        dataDecals = Resources.LoadAll<DataDecals>("Datas/DataDecals");
     }
 
     public DataItem GetDataItemById(string guidId)
@@ -37,7 +37,20 @@ public class DataManager : MonoBehaviour
         DataCharacter temp = null;
         foreach (DataCharacter item in dataCharacters)
         {
-           if (item.Name.Equals(name, StringComparison.OrdinalIgnoreCase))
+            if (item.Name.Equals(name, StringComparison.OrdinalIgnoreCase))
+            {
+                temp = item;
+            }
+        }
+        return temp;
+    }
+
+    internal DataItem GetDataItemByName(string name)
+    {
+        DataItem temp = null;
+        foreach (DataItem item in dataItems)
+        {
+            if (item.Name == name)
             {
                 temp = item;
             }

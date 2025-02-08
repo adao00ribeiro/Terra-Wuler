@@ -8,7 +8,7 @@ public class Inventory : MonoBehaviour
 {
     //public event Action<int, Slot> OnUpdateInventory;
   
-    public readonly List<Slot> inventory = new List<Slot>();
+    public  List<Slot> inventory = new List<Slot>();
     [SerializeField] private int maxSlot = 6;
 
     public bool teste;

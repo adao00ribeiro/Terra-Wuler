@@ -8,6 +8,12 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 833999261477201485, guid: da47c54268c42bd499ead10f1aa22fc6,
+        type: 3}
+      propertyPath: dataItem
+      value: 
+      objectReference: {fileID: 11400000, guid: 76d36708f27738643bcbdd0d901ce027,
+        type: 2}
     - target: {fileID: 4344970368252246494, guid: da47c54268c42bd499ead10f1aa22fc6,
         type: 3}
       propertyPath: m_Name
@@ -16,17 +22,17 @@ PrefabInstance:
     - target: {fileID: 4748125416323909799, guid: da47c54268c42bd499ead10f1aa22fc6,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6.8197727
+      value: -1.04798
       objectReference: {fileID: 0}
     - target: {fileID: 4748125416323909799, guid: da47c54268c42bd499ead10f1aa22fc6,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.000000029802322
+      value: 0.00000011920929
       objectReference: {fileID: 0}
     - target: {fileID: 4748125416323909799, guid: da47c54268c42bd499ead10f1aa22fc6,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 3.1509056
+      value: -1.193084
       objectReference: {fileID: 0}
     - target: {fileID: 4748125416323909799, guid: da47c54268c42bd499ead10f1aa22fc6,
         type: 3}
@@ -62,6 +68,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5254628639203135117, guid: da47c54268c42bd499ead10f1aa22fc6,
+        type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6954222320353042286, guid: da47c54268c42bd499ead10f1aa22fc6,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.1543
+      objectReference: {fileID: 0}
+    - target: {fileID: 7482415571964238114, guid: da47c54268c42bd499ead10f1aa22fc6,
+        type: 3}
+      propertyPath: m_UseGravity
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7482415571964238114, guid: da47c54268c42bd499ead10f1aa22fc6,
+        type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8127150724898595841, guid: da47c54268c42bd499ead10f1aa22fc6,
         type: 3}

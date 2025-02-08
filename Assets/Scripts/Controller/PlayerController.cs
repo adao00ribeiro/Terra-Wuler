@@ -17,7 +17,7 @@ public class PlayerController : MonoBehaviour
   void Start()
   {
     inputManager = GameController.Instance.GetComponentManager<InputManager>();
-    var rpgplayer = Instantiate(PrefabRpgPlayer);
+    var rpgplayer = Instantiate(PrefabRpgPlayer , transform.position,transform.rotation);
     var datamanager = GameController.Instance.GetComponentManager<DataManager>();
     rpgplayer.InstantiateCharacter(datamanager.GetDataCharacterByName("Warrior")?.PrefabCharacter);
     SetControl(rpgplayer);
@@ -40,9 +40,9 @@ public class PlayerController : MonoBehaviour
     this.control = control;
     this.moviment = control.GetGameObject().GetComponent<Moviment>();
   }
-  public Character GetCharacter()
+  public RpgPlayer GetCharacter()
   {
-    return control.GetGameObject().GetComponent<Character>();
+    return control.GetGameObject().GetComponent<RpgPlayer>();
   }
 
 }

@@ -7,6 +7,7 @@ namespace ApocalipseZ
 {
     public class HitFXManager : MonoBehaviour
     {
+        /*
         [SerializeField] private DataManager DataManager;
         private ParticleSystem objconcreteHitFX;
         private ParticleSystem objwoodHitFX;
@@ -20,7 +21,7 @@ namespace ApocalipseZ
         public AudioClip[] ricochetSounds;
         void Start()
         {
-            DataManager = GameController.Instance.DataManager;
+            DataManager = GameController.Instance.GetComponentManager<DataManager>();
             ricochetSource = GetComponent<AudioSource>();
         }
         public void RicochetSFX()
@@ -139,5 +140,7 @@ namespace ApocalipseZ
                 return objbloodHitFX;
             }
         }
+         */
     }
+   
 }
