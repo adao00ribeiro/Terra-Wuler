@@ -8,7 +8,6 @@ public class RpgPlayer : MonoBehaviour, IControl
 
     [SerializeField] private Animator animator;
     private InputManager inputManager;
-    private Moviment moviment;
     private Character meshCharacter;
     public GameObject GetGameObject()
     {
@@ -19,7 +18,6 @@ public class RpgPlayer : MonoBehaviour, IControl
     void Start()
     {
         inputManager = GameController.Instance.GetComponentManager<InputManager>();
-        moviment = GetComponent<Moviment>();
 
     }
 
@@ -27,8 +25,7 @@ public class RpgPlayer : MonoBehaviour, IControl
     void Update()
     {
 
-        Vector2 moveInput = inputManager.GetMove();
-        moviment.HandleMovement(moveInput.x, moveInput.y);
+     
         if (animator == null)
         {
             return;

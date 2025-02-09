@@ -6,6 +6,7 @@ public class DataManager : MonoBehaviour
 {
     [SerializeField] private DataAudio[] dataAudios;
     [SerializeField] private DataCharacter[] dataCharacters;
+    [SerializeField] private DataParticles[] dataParticles;
     [SerializeField] private DataDecals[] dataDecals;
     [SerializeField] private DataEnemy[] dataEnemy;
     [SerializeField] private DataItem[] dataItems;
@@ -16,7 +17,7 @@ public class DataManager : MonoBehaviour
         dataItems = Resources.LoadAll<DataItem>("Datas/WorldItems");
         dataCharacters = Resources.LoadAll<DataCharacter>("Datas/Characters");
         dataAudios = Resources.LoadAll<DataAudio>("Datas/DataAudios");
-        // ListParticles = Resources.LoadAll<DataParticles>("Datas/DataParticles");
+        dataParticles = Resources.LoadAll<DataParticles>("Datas/DataParticles");
         dataDecals = Resources.LoadAll<DataDecals>("Datas/DataDecals");
     }
 

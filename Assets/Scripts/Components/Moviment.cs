@@ -35,8 +35,6 @@ namespace TerraWuler
 
             freeLookVCam.Follow = transform;
             freeLookVCam.LookAt = transform;
-
-
             freeLookVCam.OnTargetObjectWarped(transform, transform.position - freeLookVCam.transform.position - Vector3.forward);
 
         }
@@ -61,13 +59,9 @@ namespace TerraWuler
             }
 
         }
-
-
         public void HandleRigidbodyMovement(Vector3 adjustedDirection)
         {
-
             var adjustedMovement = adjustedDirection * (moveSpeed * Time.deltaTime);
-
             rb.MovePosition(rb.position + adjustedMovement);
         }
 

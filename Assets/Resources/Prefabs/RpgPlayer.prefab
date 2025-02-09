@@ -554,6 +554,7 @@ GameObject:
   - component: {fileID: 3694409412620500364}
   - component: {fileID: 5006445796608027660}
   - component: {fileID: 6183289785867883973}
+  - component: {fileID: -4196987475227978665}
   m_Layer: 0
   m_Name: RpgPlayer
   m_TagString: Player
@@ -669,6 +670,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2aa93867a9a6744395a150aac28ed75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inventory: []
   maxSlot: 6
   teste: 0
 --- !u!114 &6183289785867883973
@@ -695,6 +697,18 @@ MonoBehaviour:
   RaycastDirection: {x: 0, y: -1, z: 0}
   AdjustRayLength: 0
   UseGlobalRaycast: 0
+--- !u!114 &-4196987475227978665
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7220061995753860935}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 754145f9c4c876b4aa88a2a220df07bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7343438887070739884
 GameObject:
   m_ObjectHideFlags: 0
